@@ -1,4 +1,10 @@
-# README
+# Tutor Tracker API
+
+This is in development and not yet usable, at all. 
+
+
+---
+Pre-generated Rails Readme:
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
