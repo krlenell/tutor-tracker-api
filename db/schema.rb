@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_060604) do
+ActiveRecord::Schema.define(version: 2021_03_09_054134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "students", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "student_name", null: false
+    t.boolean "is_active", default: false
+    t.boolean "is_minor", null: false
+    t.text "student_phone"
+    t.text "student_email"
+    t.text "school"
+    t.text "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
