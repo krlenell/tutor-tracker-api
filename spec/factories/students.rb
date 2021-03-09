@@ -1,11 +1,13 @@
+
+
 FactoryBot.define do
   factory :student do
-    name { "Stupid Test Boy" }
+    name { Faker::Name.name }
     active { false }
     minor { false }
-    phone { "1234567" }
-    email { "xxxallthekills69@hotmail.com" }
-    school { "School of Dumbo" }
-    address { "1234 Stinky Lane" }
+    phone { Faker::PhoneNumber.phone_number }
+    email { Faker::Internet.email }
+    school { Faker::University.name }
+    address { Faker::Address.street_address }
   end
 end
