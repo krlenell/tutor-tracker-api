@@ -16,4 +16,14 @@
 class Student < ApplicationRecord
 
   validates :name, :minor, presence: true
+  validate :non_minor_needs_phone_and_email
+
+  private
+  def non_minor_needs_phone_and_email
+    if minor == false && !(phone && email)
+      errors.add(:minor, "non-minor must have phone and email")
+    end
+  end
+
+
 end
