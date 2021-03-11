@@ -18,7 +18,7 @@ FactoryBot.define do
     name { Faker::Name.name }
     active { false }
     minor { true }
-    phone { Faker::PhoneNumber.phone_number }
+    phone { Faker::PhoneNumber.cell_phone_in_e164 }
     email { Faker::Internet.email }
     school { Faker::University.name }
     address { Faker::Address.street_address }
