@@ -19,7 +19,7 @@ FactoryBot.define do
     name { Faker::Name.name }
     active { false }
     minor { true }
-    phone { Phonelib.parse(Faker::PhoneNumber.cell_phone).full_e164 }
+    phone { Phonelib.parse("1 414-383-1113").full_e164 }
     email { Faker::Internet.email }
     school { Faker::University.name }
     address { Faker::Address.street_address }
@@ -31,6 +31,16 @@ FactoryBot.define do
     factory :bad_phone_minor do
       phone {12345}
     end
+
+    factory :no_contact_minor do
+      phone {nil}
+      email {nil}
+    end
+
+    factory :bad_email_minor do
+      email {"not an email"}
+    end
+
     factory :no_contact_adult_student do
       minor { false }
       email { nil }

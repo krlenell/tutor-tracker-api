@@ -78,8 +78,6 @@ GEM
     crass (1.0.6)
     debug_inspector (1.0.0)
     diff-lcs (1.4.4)
-    email_validator (2.2.2)
-      activemodel
     erubi (1.10.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -184,6 +182,9 @@ GEM
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    valid_email2 (3.6.0)
+      activemodel (>= 3.2)
+      mail (~> 2.5)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -198,7 +199,6 @@ DEPENDENCIES
   binding_of_caller
   bootsnap (>= 1.4.4)
   byebug
-  email_validator
   factory_bot_rails
   faker
   listen (~> 3.3)
@@ -211,6 +211,7 @@ DEPENDENCIES
   shoulda-matchers
   spring
   tzinfo-data
+  valid_email2
 
 RUBY VERSION
    ruby 3.0.0p0
