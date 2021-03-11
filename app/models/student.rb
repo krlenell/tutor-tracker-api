@@ -17,6 +17,7 @@ class Student < ApplicationRecord
 
   validates :name, :minor, presence: true
   validate :non_minor_needs_phone_and_email
+  validates :phone, phone: {possible: true, allow_blank: true}
 
   private
   def non_minor_needs_phone_and_email

@@ -13,16 +13,24 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+
 FactoryBot.define do
   factory :student do
     name { Faker::Name.name }
     active { false }
     minor { true }
-    phone { Faker::PhoneNumber.cell_phone_in_e164 }
+    phone { Phonelib.parse(Faker::PhoneNumber.cell_phone).full_e164 }
     email { Faker::Internet.email }
     school { Faker::University.name }
     address { Faker::Address.street_address }
 
+    factory :no_phone_minor do
+      phone { nil }
+    end
+
+    factory :bad_phone_minor do
+      phone {12345}
+    end
     factory :no_contact_adult_student do
       minor { false }
       email { nil }
