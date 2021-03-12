@@ -29,6 +29,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
 
+  gem "valid_email2"
+  gem 'phonelib'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
 end
