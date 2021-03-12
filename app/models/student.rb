@@ -14,19 +14,14 @@
 #  updated_at :datetime         not null
 #
 class Student < ApplicationRecord
-
   validates :name, :minor, presence: true
-  validates :phone, phone: {possible: true, allow_blank: true}
+  validates :phone, phone: { possible: true, allow_blank: true }
   validate :non_minor_needs_phone_and_email
   validates :email, 'valid_email_2/email': true, allow_blank: true
 
   private
+
   def non_minor_needs_phone_and_email
-    if minor == false && !(phone && email)
-      errors.add(:minor, "non-minor must have phone and email")
-    end
+    errors.add(:minor, 'non-minor must have phone and email') if minor == false && !(phone && email)
   end
-
-
-
 end

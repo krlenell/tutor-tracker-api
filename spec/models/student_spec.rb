@@ -16,12 +16,11 @@
 require 'rails_helper'
 
 RSpec.describe Student, type: :model do
-
-  subject(:student) {FactoryBot.build(:student)}
+  subject(:student) { FactoryBot.build(:student) }
 
   describe 'validations' do
-    it {should validate_presence_of(:name)}
-    it {should validate_presence_of(:minor)}
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:minor) }
 
     it 'validates proper phone number' do
       good_student = FactoryBot.build(:student)
@@ -42,8 +41,7 @@ RSpec.describe Student, type: :model do
     it 'should validate adults have email and phone' do
       no_contact_adult = FactoryBot.build(:no_contact_adult_student)
       no_contact_adult.valid?
-      expect(no_contact_adult.errors.messages_for(:minor)).to include("non-minor must have phone and email")
+      expect(no_contact_adult.errors.messages_for(:minor)).to include('non-minor must have phone and email')
     end
   end
-
 end
