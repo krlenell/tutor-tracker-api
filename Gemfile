@@ -46,6 +46,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'listen', '~> 3.3'
   gem 'spring'
+  gem 'rubocop', '~> 1.11', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-rails', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
