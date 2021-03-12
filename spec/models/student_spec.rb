@@ -38,7 +38,7 @@ RSpec.describe Student, type: :model do
       expect(bad_email).not_to be_valid
     end
 
-    it 'should validate adults have email and phone' do
+    it 'validates adults have email and phone' do
       no_contact_adult = FactoryBot.build(:no_contact_adult_student)
       no_contact_adult.valid?
       expect(no_contact_adult.errors.messages_for(:minor)).to include('non-minor must have phone and email')
