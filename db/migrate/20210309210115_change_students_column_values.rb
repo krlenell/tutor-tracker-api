@@ -1,3 +1,4 @@
+# changed column values to strings
 class ChangeStudentsColumnValues < ActiveRecord::Migration[6.1]
   def change
     change_column :students, :name, :string
