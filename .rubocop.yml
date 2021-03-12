@@ -29,3 +29,20 @@ Style/FrozenStringLiteralComment:
 Rails/FilePath:
   Exclude:
     - 'config/environments/development.rb'
+
+# I didn't make it, I ain't letting rubocop touch it
+Style/RedundantFetchBlock:
+  Exclude:
+    - 'config/puma.rb'
+
+# I think this is a good idea to fix, but seems a lil unsafe to do
+Style/GlobalStdStream:
+  Exclude:
+    - 'config/environments/production.rb'
+
+# I don't understand why I should make changes to a migration I already ran
+# Furthermore, I feel like this rule will likely not catch problems before I
+# run the migration
+Rails/BulkChangeTable:
+  Exclude:
+    - 'db/migrate/20210309210115_change_students_column_values.rb'
