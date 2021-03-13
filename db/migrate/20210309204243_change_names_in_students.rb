@@ -1,3 +1,4 @@
+# changed column names to remove excess junk
 class ChangeNamesInStudents < ActiveRecord::Migration[6.1]
   def change
     rename_column :students, :student_name, :name

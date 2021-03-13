@@ -1,7 +1,8 @@
+# created students table
 class CreateStudents < ActiveRecord::Migration[6.1]
   def change
     create_table :students, id: :uuid do |t|
-      t.text :student_name, null:false
+      t.text :student_name, null: false
       t.boolean :is_active, default: false
       t.boolean :is_minor, null: false
       t.integer :student_phone
