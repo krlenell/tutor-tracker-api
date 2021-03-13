@@ -35,6 +35,18 @@ Style/RedundantFetchBlock:
   Exclude:
     - 'config/puma.rb'
 
+# encourages overuse of let, allegedly
+RSpec/ExampleLength:
+  Enabled: false
+
+# this seems like overkill
+RSpec/MultipleExpectations:
+  Enabled: false
+
+# because using shoulda matchers
+RSpec/ImplicitExpect:
+  EnforcedStyle: should
+
 # I think this is a good idea to fix, but seems a lil unsafe to do
 Style/GlobalStdStream:
   Exclude:

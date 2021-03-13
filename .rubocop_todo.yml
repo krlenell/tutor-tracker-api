@@ -5,20 +5,3 @@
 # one by one as the offenses are removed from the code base.
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
-
-# Offense count: 1
-# Configuration parameters: Max.
-RSpec/ExampleLength:
-  Exclude:
-    - 'spec/models/student_spec.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: .
-# SupportedStyles: is_expected, should
-RSpec/ImplicitExpect:
-  EnforcedStyle: should
-
-# Offense count: 2
-RSpec/MultipleExpectations:
-  Max: 3
