@@ -21,7 +21,7 @@ RSpec.describe 'Students', type: :request do
         expect(response).to have_http_status(:ok)
       end
 
-      it 'is not empty' do
+      it 'response body is not empty' do
         create(:student)
         get '/students'
         expect(JSON.parse(response.body)).not_to be_empty
