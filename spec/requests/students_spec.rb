@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Students', type: :request do
   describe 'GET /index' do
-
     it 'successfully responds with json' do
       get students_path
       expect(response.content_type).to include('application/json')
@@ -35,5 +34,4 @@ RSpec.describe 'Students', type: :request do
       end
     end
   end
-
 end
