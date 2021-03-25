@@ -6,8 +6,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    student = Student.find(params[:id])
-    if student
+    if Student.exists?(id: params[:id])
+      student = Student.find(id: params[:id])
       render json: student, status: :ok
     else
       render json: { error: 'student not found' }, status: :not_found

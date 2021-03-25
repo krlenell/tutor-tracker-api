@@ -34,4 +34,19 @@ RSpec.describe 'Students', type: :request do
       end
     end
   end
+
+  describe 'GET /show' do
+    context 'when student is not found' do
+
+      it 'responds with a 404 response' do
+        get student_path('garbage')
+        expect(response).to have_http_status(:not_found)
+      end
+
+      it 'responds with error json' do
+        get student_path('garbage')
+        expect(JSON.parse(response.body)).to eq({ 'error' => 'student not found' })
+      end
+    end
+  end
 end
