@@ -28,9 +28,11 @@ RSpec.describe 'Students', type: :request do
       end
 
       it 'response body is not empty' do
-        create(:student)
+        student = create(:student)
         get students_path
-        expect(JSON.parse(response.body)).not_to be_empty
+        res_body = JSON.parse(response.body)
+        expect(res_body).not_to be_empty
+        expect(res_body.first).to match(hash_including(student.attributes.except('created_at', 'updated_at')))
       end
     end
   end
@@ -59,8 +61,8 @@ RSpec.describe 'Students', type: :request do
         student = create(:student)
         get student_path(student[:id])
         res_body = JSON.parse(response.body)
-        expect(res_body).to include('name' => student[:name])
-        expect(res_body).to include('address' => student[:address])
+        # expect(res_body).to include('name' => student[:name])
+        expect(res_body).to match(hash_including(student.attributes.except('created_at', 'updated_at')))
       end
     end
   end
